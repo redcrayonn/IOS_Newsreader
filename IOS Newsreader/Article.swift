@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-class Article:  {
+class Article {
     var Id : Int?
     var Feed : Int?
     var Title : String?
@@ -17,7 +18,7 @@ class Article:  {
     var Image : String?
     var Url : String?
     var Related : [String]?
-    var Categories : [Categories]?
+    //var Categories : [Categories]?
     var IsLiked : Bool?
     
     var photo:UIImage?

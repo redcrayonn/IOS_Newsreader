@@ -22,6 +22,8 @@ class ArticleTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        loadSampleMeals()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,12 +35,12 @@ class ArticleTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return articles.count
     }
 
     /*
@@ -50,6 +52,22 @@ class ArticleTableViewController: UITableViewController {
         return cell
     }
     */
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "ArticleTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ArticleTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+        }
+
+        let article = articles[indexPath.row]
+        
+        // Configure the cell...
+        
+        cell.nameLabel.text = article.Title
+        cell.photoImageView.image = article.photo
+        
+        return cell
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -105,18 +123,12 @@ class ArticleTableViewController: UITableViewController {
         
         
         
-        guard let meal1 = Article(title: "Caprese Salad", photo: photo1, rating: 4) else {
-            fatalError("Unable to instantiate meal1")
-        }
+        let meal1 = Article(Title: "Caprese Salad", photo: photo1)
         
-        guard let meal2 = Article(name: "Chicken and Potatoes", photo: photo2, rating: 5) else {
-            fatalError("Unable to instantiate meal2")
-        }
+        let meal2 = Article(Title: "Chicken and Potatoes", photo: photo2)
         
-        guard let meal3 = Article(name: "Pasta with Meatballs", photo: photo3, rating: 3) else {
-            fatalError("Unable to instantiate meal2")
-        }
+        let meal3 = Article(Title: "Pasta with Meatballs", photo: photo3)
         
-
+        articles += [meal1, meal2, meal3]
     }
 }
