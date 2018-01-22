@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Article Table View Controller-->
         <scene sceneID="NLf-aY-70l">
             <objects>
-                <tableViewController id="wku-Tg-laV" sceneMemberID="viewController">
+                <tableViewController id="wku-Tg-laV" customClass="ArticleTableViewController" customModule="IOS_Newsreader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YGi-Yu-aLg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
