@@ -81,7 +81,7 @@ class ArticleService{
         }
         
         return baseService.send(toRelativePath: path,
-                                withHttpMethod: .get,
+                                withHttpMethod: .put,
                                 withParameters: parameters,
                                 withHeaders: headers,
                                 onSuccessParser: { (result) in
@@ -104,7 +104,7 @@ class ArticleService{
         }
         
         return baseService.send(toRelativePath: path,
-                                withHttpMethod: .get,
+                                withHttpMethod: .delete,
                                 withParameters: parameters,
                                 withHeaders: headers,
                                 onSuccessParser: { (result) in
