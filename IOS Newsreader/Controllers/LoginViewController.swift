@@ -35,10 +35,14 @@ class LoginViewController: UIViewController {
             } else {
                 loginService.login(username: loginUsername.text!,
                                    password: loginPassword.text!,
-                                   onSuccess: { (result) in
-                                    DispatchQueue.main.sync {
-                                        self.toasts.loginSuccessAlert(atVC: self)
-                                    }
+                                   onSuccess: {
+                                    DispatchQueue.global().async(execute: {
+                                        DispatchQueue.main.sync {
+                                                self.toasts.loginSuccessAlert(atVC: self)
+                                            }
+                                        }
+                                    )
+                
                 }) {
                     DispatchQueue.main.async {
                         self.toasts.invalidCredentialsAlert(atVC: self)

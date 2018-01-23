@@ -15,7 +15,7 @@ class LoginService
     
     public func login(username: String,
                       password: String,
-                      onSuccess: @escaping (_ result: LoginResult) -> (),
+                      onSuccess: @escaping () -> (),
                       onFailure: @escaping () -> ())
     {
         let headers: [String : String] = [:]
@@ -31,13 +31,13 @@ class LoginService
                                withHeaders: headers,
                                onSuccessParser: { (token) in
                                 do {
-                                    let result = try JSONDecoder().decode(LoginResult.self, from: token )
+                                    let result = try JSONDecoder().decode(LoginResult.self, from: token as Data)
                                     if result.authToken == nil {
                                         onFailure()
                                     }
                                     User.currentUser().username = username as String
                                     User.currentUser().authToken = result.authToken
-                                    onSuccess(result)
+                                    onSuccess()
                                 }catch{
                                     print("Json parse failed")
                                     onFailure()
