@@ -100,6 +100,56 @@
             </objects>
             <point key="canvasLocation" x="-441" y="753"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="qA6-po-0zz">
+            <objects>
+                <viewController id="tPP-B7-czq" customClass="LoginViewController" customModule="IOS_Newsreader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ia-tx-xmZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFw-aW-hfr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="TSp-rZ-Gc2"/>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZgO-CK-8r5">
+                                <rect key="frame" x="93" y="304" width="188" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIy-BK-ljt">
+                                <rect key="frame" x="93" y="353" width="188" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="LoginClick:" destination="tPP-B7-czq" eventType="touchUpInside" id="hm6-cS-HrL"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2Ja-UC-Ggm">
+                                <rect key="frame" x="93" y="266" width="188" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6pn-yY-bcH"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginPassword" destination="ZgO-CK-8r5" id="agS-Ta-15R"/>
+                        <outlet property="loginUsername" destination="2Ja-UC-Ggm" id="gl0-6J-jDJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hCh-EM-JKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1034.4000000000001" y="-715.59220389805103"/>
+        </scene>
         <!--Article Table View Controller-->
         <scene sceneID="NLf-aY-70l">
             <objects>
@@ -114,7 +164,11 @@
                             <items>
                                 <navigationItem title="Newsreader" id="KDD-FW-bSh">
                                     <barButtonItem key="backBarButtonItem" title="Back to Newsreader" id="eMf-RY-Doh"/>
-                                    <barButtonItem key="rightBarButtonItem" title="Login" id="Aog-ZM-g4P"/>
+                                    <barButtonItem key="rightBarButtonItem" title="Login" id="Aog-ZM-g4P">
+                                        <connections>
+                                            <segue destination="tPP-B7-czq" kind="show" id="Obf-ac-w0g"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>

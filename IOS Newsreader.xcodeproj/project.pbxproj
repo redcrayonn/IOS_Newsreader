@@ -24,6 +24,9 @@
 		218F3B18201759120038779C /* Toasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F3B17201759120038779C /* Toasts.swift */; };
 		218F3B1A201759430038779C /* ModelTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F3B19201759430038779C /* ModelTransition.swift */; };
 		218F3B1C20175BF70038779C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F3B1B20175BF70038779C /* DetailViewController.swift */; };
+		218F3B1E201771370038779C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F3B1D201771370038779C /* LoginViewController.swift */; };
+		218F3B20201772450038779C /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F3B1F201772450038779C /* LoginResult.swift */; };
+		218F3B222017734B0038779C /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F3B212017734B0038779C /* LoginService.swift */; };
 		C2B89DFA07D887D80D7F8A12 /* Pods_IOS_Newsreader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69579AF6AC8F54B404F0B9D /* Pods_IOS_Newsreader.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,9 @@
 		218F3B17201759120038779C /* Toasts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toasts.swift; sourceTree = "<group>"; };
 		218F3B19201759430038779C /* ModelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTransition.swift; sourceTree = "<group>"; };
 		218F3B1B20175BF70038779C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		218F3B1D201771370038779C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		218F3B1F201772450038779C /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
+		218F3B212017734B0038779C /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		75F78DE520F0EA843F38229C /* Pods-IOS Newsreader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Newsreader.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOS Newsreader/Pods-IOS Newsreader.release.xcconfig"; sourceTree = "<group>"; };
 		B69579AF6AC8F54B404F0B9D /* Pods_IOS_Newsreader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Newsreader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF14776C6A9D6D9D40CA1A34 /* Pods-IOS Newsreader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Newsreader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOS Newsreader/Pods-IOS Newsreader.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 			children = (
 				218F3B0720174AED0038779C /* ArticleService.swift */,
 				218F3B0D201753970038779C /* BaseService.swift */,
+				218F3B212017734B0038779C /* LoginService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -135,6 +142,7 @@
 				217C811F2016363D008142F4 /* SecondViewController.swift */,
 				217C811D2016363D008142F4 /* FirstViewController.swift */,
 				218F3B1B20175BF70038779C /* DetailViewController.swift */,
+				218F3B1D201771370038779C /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				218F3B10201756DB0038779C /* ArticleResult.swift */,
+				218F3B1F201772450038779C /* LoginResult.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -310,9 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218F3B222017734B0038779C /* LoginService.swift in Sources */,
 				218F3B0E201753970038779C /* BaseService.swift in Sources */,
 				218F3B0820174AED0038779C /* ArticleService.swift in Sources */,
 				217C813120163A0A008142F4 /* ArticleTableViewCell.swift in Sources */,
+				218F3B1E201771370038779C /* LoginViewController.swift in Sources */,
+				218F3B20201772450038779C /* LoginResult.swift in Sources */,
 				217C81202016363D008142F4 /* SecondViewController.swift in Sources */,
 				217C813D2016430F008142F4 /* Article.swift in Sources */,
 				218F3B18201759120038779C /* Toasts.swift in Sources */,
