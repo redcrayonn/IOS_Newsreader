@@ -164,6 +164,19 @@
                             <items>
                                 <navigationItem title="Newsreader" id="KDD-FW-bSh">
                                     <barButtonItem key="backBarButtonItem" title="Back to Newsreader" id="eMf-RY-Doh"/>
+                                    <barButtonItem key="leftBarButtonItem" style="plain" id="2dA-Q6-mWg">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zO1-zZ-UxW">
+                                            <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Logout"/>
+                                            <connections>
+                                                <action selector="LogoutButtonClick:" destination="wku-Tg-laV" eventType="touchUpInside" id="JKM-hE-88Z"/>
+                                            </connections>
+                                        </button>
+                                        <connections>
+                                            <action selector="LogoutClick:" destination="wku-Tg-laV" id="4b8-ax-DTp"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" title="Login" id="Aog-ZM-g4P">
                                         <connections>
                                             <segue destination="tPP-B7-czq" kind="show" id="Obf-ac-w0g"/>
@@ -208,6 +221,7 @@
                     <navigationItem key="navigationItem" id="i0w-ti-h4m"/>
                     <connections>
                         <outlet property="LoginButton" destination="Aog-ZM-g4P" id="dsU-sN-BJe"/>
+                        <outlet property="LogoutButton" destination="2dA-Q6-mWg" id="mie-1b-hu3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04i-EV-9mG" userLabel="First Responder" sceneMemberID="firstResponder"/>

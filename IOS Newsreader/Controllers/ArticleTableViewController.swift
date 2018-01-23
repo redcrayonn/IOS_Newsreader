@@ -11,6 +11,7 @@ import UIKit
 class ArticleTableViewController: UITableViewController {
 
     @IBOutlet weak var LoginButton: UIBarButtonItem!
+    @IBOutlet weak var LogoutButton: UIBarButtonItem!
     
     //MARK: Properties
     var articles = [Article]()
@@ -35,6 +36,7 @@ class ArticleTableViewController: UITableViewController {
         self.refreshControl!.addTarget((target: self), action: #selector(refresh),
                                        for: UIControlEvents.valueChanged)
         
+        handleLogInOutButtonVisibility()
         //loadSampleMeals()
     }
 
@@ -153,12 +155,8 @@ class ArticleTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        
-        if User.currentUser().isLoggedIn {
-            //registerBtn.isEnabled = false
-        }
-        
         self.refreshTable()
+        handleLogInOutButtonVisibility()
     }
     
     
@@ -180,6 +178,11 @@ class ArticleTableViewController: UITableViewController {
             })
         }
     }*/
+    @IBAction func LogoutButtonClick(_ sender: Any) {
+        User.logOut()
+        refreshTable()
+        handleLogInOutButtonVisibility()
+    }
     
     @IBAction func refresh() {
         checkInternetConnection { [weak self] in
@@ -197,16 +200,6 @@ class ArticleTableViewController: UITableViewController {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-    }
-    
-    func popoverDismissed() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
-        
-        if User.currentUser().isLoggedIn {
-            self.LoginButton.title = "Logout"
-        }
-        
-        self.reloadArticles()
     }
     
     func reloadArticles() {
@@ -240,6 +233,18 @@ class ArticleTableViewController: UITableViewController {
         }
     }
     
+    func handleLogInOutButtonVisibility()
+    {
+        if(User.currentUser().isLoggedIn)
+        {
+            self.LoginButton.isEnabled = false
+            self.LogoutButton.isEnabled = true
+        }
+        else{
+            self.LoginButton.isEnabled = true
+            self.LogoutButton.isEnabled = false
+        }
+    }
     
     /* Dummy functions */
     /*

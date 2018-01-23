@@ -42,6 +42,7 @@ class LoginViewController: UIViewController {
                                             }
                                         }
                                     )
+                                    self.navigationController?.popViewController(animated: true)
                 
                 }) {
                     DispatchQueue.main.async {

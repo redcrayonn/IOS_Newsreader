@@ -28,4 +28,9 @@ class User{
         }
         return instance!
     }
+    
+    public static func logOut()
+    {
+        instance = nil
+    }
 }
