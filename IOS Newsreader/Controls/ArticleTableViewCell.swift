@@ -10,14 +10,26 @@ import UIKit
 
 class ArticleTableViewCell: UITableViewCell {
 
+    let articleService: ArticleService = ArticleService()
+    
     //Mark: Properties
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var photoImageView: UIImageView!
+    public var article: Article?
+    @IBOutlet weak var articleTitle: UILabel!
+    @IBOutlet weak var articleImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func mapTo(with article: Article) {
+        self.article = article
+        
+        articleTitle.text = self.article!.Title
+        articleService.loadImage(in: self.articleImage, of: article)
+        //favoriteImage.isHidden = !article.IsLiked!
+    }
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
