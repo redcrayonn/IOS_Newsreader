@@ -8,12 +8,18 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-    @IBOutlet var image: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet var summaryText: UITextView!
-    @IBOutlet var likeSwitch: UISwitch!
-    @IBOutlet var likeLabel: UILabel!
+class ArticleDetailViewController: UIViewController {
+    //@IBOutlet var image: UIImageView!
+    //@IBOutlet weak var titleLabel: UILabel!
+    //@IBOutlet var summaryText: UITextView!
+    //@IBOutlet var likeSwitch: UISwitch!
+    //@IBOutlet var likeLabel: UILabel!
+    
+    @IBOutlet weak var articleImage: UIImageView!
+    @IBOutlet weak var articleTitle: UILabel!
+    @IBOutlet weak var articleExcerpt: UITextView!
+    @IBOutlet weak var likeSwitch: UISwitch!
+    @IBOutlet weak var likeSwitchText: UILabel!
     
     var article: Article?
     var articleService: ArticleService = ArticleService()
@@ -22,12 +28,14 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         likeSwitch.isHidden = !User.currentUser().isLoggedIn
-        likeLabel.isHidden = !User.currentUser().isLoggedIn
+        likeSwitchText.isHidden = !User.currentUser().isLoggedIn
         likeSwitch.isOn = (article?.IsLiked)!
         
-        titleLabel.text = article?.Title
-        summaryText.text = article?.Summary!
-        articleService.loadImage(in: self.image, of: article!)
+        articleTitle.text = article?.Title
+        articleExcerpt.text = article?.Summary!
+        articleService.loadImage(in: self.articleImage, of: article!)
+        
+        self.navigationController?.navigationBar.backItem?.title = "Other news"
     }
     
     @IBAction func readMoreBtn(_ sender: Any) {

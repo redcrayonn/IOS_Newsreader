@@ -144,7 +144,7 @@ class ArticleTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //         Get the new view controller using segue.destinationViewController.
         //         Pass the selected object to the new view controller.
-        if let detailVC = segue.destination as? DetailViewController {
+        if let detailVC = segue.destination as? ArticleDetailViewController {
             if let cell = sender as? ArticleTableViewCell {
                 detailVC.article = cell.article!
             }

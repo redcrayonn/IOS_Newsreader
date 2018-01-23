@@ -6,6 +6,8 @@
 //  Copyright © 2018 Dev Olaf. All rights reserved.
 //
 
+/* Met dank aan Wouter */
+
 import UIKit
 import Foundation
 import SystemConfiguration
@@ -62,17 +64,6 @@ class Toasts {
                                                   handler: nil))
         atVC.present(loginSuccessAlert, animated: true, completion: nil)
     }
-    
-    //    func registerSuccessAlert(atVC: UIViewController) {
-    //        let successAlert = UIAlertController(title: "Register successfull", message: "Maybe you want to login immediatly", preferredStyle: UIAlertControllerStyle.alert)
-    //
-    //        successAlert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-    //
-    //
-    //
-    //
-    //        atVC.present(successAlert, animated: true, completion: nil)
-    //    }
     
     func registerFailedAlert(atVC: UIViewController) {
         let registerFailedAlert = UIAlertController(title: "Register failed",
