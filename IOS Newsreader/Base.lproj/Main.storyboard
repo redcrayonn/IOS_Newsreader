@@ -204,10 +204,18 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Liked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kve-wj-KaT">
+                                            <rect key="frame" x="102" y="51" width="41" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="articleImage" destination="Xjf-9F-Hlq" id="7Xw-RC-l1r"/>
+                                    <outlet property="articleLikedIndicator" destination="Kve-wj-KaT" id="Jxt-Ga-BtK"/>
                                     <outlet property="articleTitle" destination="MfC-uM-yqN" id="FbR-Ks-yiN"/>
                                     <segue destination="ZWM-MK-Iwu" kind="show" id="yHv-8D-b0x"/>
                                 </connections>
@@ -262,6 +270,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QSf-kc-1YK">
                                 <rect key="frame" x="161" y="593" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="likeSwitchToggled:" destination="ZWM-MK-Iwu" eventType="valueChanged" id="1Q3-Uz-NY1"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOT-h6-92L">
                                 <rect key="frame" x="140" y="632" width="90" height="21"/>

@@ -55,6 +55,23 @@ class ArticleDetailViewController: UIViewController {
             }
         }
     }
+    @IBAction func likeSwitchToggled(_ sender: Any) {
+        if likeSwitch.isOn{
+            articleService.likeArticle(id: (article?.Id)!, onSuccess: {
+                self.article?.IsLiked = true
+            }, onFailure: {
+                print("Error with like request")
+                self.likeSwitch.isOn = false
+            })
+        } else {
+            articleService.unLikeArticle(id: (article?.Id)!, onSuccess: {
+                self.article?.IsLiked = false
+            }, onFailure: {
+                print("Error with unlike request")
+                self.likeSwitch.isOn = true
+            })
+        }
+    }
     // Like or unlike actions for articles
     /*
     @IBAction func likeSwitchToggle(_ sender: UISwitch) {

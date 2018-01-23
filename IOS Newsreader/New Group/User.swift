@@ -31,6 +31,7 @@ class User{
     
     public static func logOut()
     {
-        instance = nil
+        //instance = nil
+        self.currentUser().authToken = nil
     }
 }

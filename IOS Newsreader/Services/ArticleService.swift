@@ -68,4 +68,49 @@ class ArticleService{
         }
         
     }
+    
+    public func likeArticle(id: Int,
+                            onSuccess: @escaping () -> (),
+                            onFailure: @escaping () -> ()) {
+        var headers: [String : String] = [:]
+        var parameters: [String : Any] = [:]
+        var path: String = "/articles/\(id)/like"
+        
+        if User.currentUser().isLoggedIn{
+            headers = ["x-authtoken": User.currentUser().authToken!]
+        }
+        
+        return baseService.send(toRelativePath: path,
+                                withHttpMethod: .get,
+                                withParameters: parameters,
+                                withHeaders: headers,
+                                onSuccessParser: { (result) in
+                                        onSuccess()
+                                    },
+                                onFailure: {
+                                    print("Like request failed in service")
+                                })
+    }
+    
+    public func unLikeArticle(id: Int,
+                            onSuccess: @escaping () -> (),
+                            onFailure: @escaping () -> ()) {
+        var headers: [String : String] = [:]
+        var parameters: [String : Any] = [:]
+        var path: String = "/articles/\(id)/like"
+        
+        if User.currentUser().isLoggedIn{
+            headers = ["x-authtoken": User.currentUser().authToken!]
+        }
+        
+        return baseService.send(toRelativePath: path,
+                                withHttpMethod: .get,
+                                withParameters: parameters,
+                                withHeaders: headers,
+                                onSuccessParser: { (result) in
+                                    onSuccess()
+        }, onFailure: {
+        print("Unlike request failed in service")
+        })
+    }
 }

@@ -161,26 +161,11 @@ class ArticleTableViewController: UITableViewController {
     
     
     /* Navigation */
-    /*
-    @IBAction func toLoginView(_ sender: UIBarButtonItem) {
-        if !User.currentUser().isLoggedIn{
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewController(
-                withIdentifier: "SBLogin") as! LoginViewController
-            self.present(nextViewController, animated:true, completion:nil)
-        } else {
-            // Present an alert to the user which wants to log out
-            self.alerts.logoutAlert(atVC: self, onLogout: {
-                User.currentUser().username = nil
-                User.currentUser().authToken = nil
-                self.LoginButton.title = "Login"
-                self.reloadArticles()
-            })
-        }
-    }*/
+
+
     @IBAction func LogoutButtonClick(_ sender: Any) {
-        User.logOut()
-        refreshTable()
+        User.currentUser().authToken = nil
+        self.reloadArticles()
         handleLogInOutButtonVisibility()
     }
     
