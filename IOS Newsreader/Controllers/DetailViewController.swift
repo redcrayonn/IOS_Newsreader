@@ -47,6 +47,14 @@ class ArticleDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func ReadMoreClick(_ sender: Any) {
+        if let articleUrl = self.article?.Url {
+            if let url = URL(string: articleUrl) {
+                let application = UIApplication.shared
+                application.open(url)
+            }
+        }
+    }
     // Like or unlike actions for articles
     /*
     @IBAction func likeSwitchToggle(_ sender: UISwitch) {
